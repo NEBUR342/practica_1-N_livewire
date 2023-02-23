@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    $posts= Post::with('user')->where('estado' , 'Publicado')->orderBy('id','desc')->paginate(8);
+    $posts= Post::with('user')->where('estado' , 'Publicado')->orderBy('id','desc')->paginate(6);
     return view('welcome',compact('posts'));
 })->name('inicio');
 

@@ -7,7 +7,7 @@
                         <thead class="bg-white border-b">
                             <tr>
                                 <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                                    Info
+                                    Autor
                                 </th>
                                 <th scope="col" wire:click="ordenar('titulo')"
                                     class="cursor-pointer text-sm font-medium text-gray-900 px-6 py-4 text-left">
@@ -17,21 +17,13 @@
                                     class="cursor-pointer text-sm font-medium text-gray-900 px-6 py-4 text-left">
                                     Descripcion
                                 </th>
-                                <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                                    Estado
-                                </th>
                             </tr>
                         </thead>
                         @foreach ($posts as $item)
                             <tbody>
                                 <tr class="bg-gray-100 border-b">
                                     <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                                        <button
-                                            class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4
-                                        border border-blue-500 hover:border-transparent rounded"
-                                            wire:click="detalle({{ $item }})">
-                                            INFO
-                                        </button>
+                                        {{ $item->user->name }}
                                     </td>
                                     <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                                         {{ $item->titulo }}
@@ -39,13 +31,13 @@
                                     <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                                         {{ $item->descripcion }}
                                     </td>
-                                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                        {{ $item->estado }}
-                                    </td>
                                 </tr>
                             </tbody>
                         @endforeach
                     </table>
+                    <div class='mt-2'>
+                        {{ $posts->links() }}
+                    </div>
                 </div>
             </div>
         </div>

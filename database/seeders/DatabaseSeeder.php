@@ -26,6 +26,7 @@ class DatabaseSeeder extends Seeder
         // ]);
         $this->call(UserSeeder::class);
         User::factory(9)->create();
+        Storage::deleteDirectory('posts');
         Storage::makeDirectory('posts');
         Post::factory(60)->create();
     }

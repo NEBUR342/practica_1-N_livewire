@@ -3,7 +3,7 @@
         ['titulo'=>'Inicio','ruta'=>'inicio','icono'=>'fas fa-house mr-2',],
         ['titulo'=>'Dashboard','ruta'=>'dashboard','icono'=>'fas fa-gears mr-2',],
         ['titulo'=>'Mis Posts','ruta'=>'posts.show','icono'=>'fas fa-gears mr-2',]
-        ];
+    ];
 @endphp
 <nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
     <!-- Primary Navigation Menu -->
